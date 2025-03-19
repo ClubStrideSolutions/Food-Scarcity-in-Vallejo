@@ -61,9 +61,10 @@
       flex: 1;
     }
 
+    /* Remove gray background */
     .visual-content {
       flex: 1;
-      background-color: var(--light-gray);
+      /* background-color: var(--light-gray); */
       padding: 15px;
       border-radius: 8px;
       display: flex;
@@ -219,9 +220,13 @@
       <h1 style="font-size: 36px; color: var(--primary-color);">Food Scarcity in Vallejo</h1>
       <h2 style="font-size: 24px; color: var(--secondary-color); margin-top: 10px;">A Comprehensive Analysis</h2>
       
-      <div style="margin: 40px 0;">
-        <div style="background-color: var(--light-gray); height: 250px; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
-          <p>[IMAGE PLACEHOLDER: Vallejo community or food access visual]</p>
+      <div style="margin: 20px 0;">
+        <div style="height: 250px; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+          <img
+            src="C:\Users\jbclu\OneDrive\Documents\Python_dev\vallejo-view.png"
+            style="width: 500px; height: 300px; border: 1px solid #ddd; border-radius: 10px;"
+            />
+            <!-- alt="Local Food Banks Distribution Events" -->
         </div>
       </div>
       
@@ -256,9 +261,9 @@
       </div>
       <div class="visual-content">
         <img
-                        src="combined_image.jpg"
-                        style="width: 700px; height: 350px; border: 1px solid #ddd; border-radius: 10px;"
-           />
+          src="C:\Users\jbclu\OneDrive\Documents\Python_dev\combined_image.jpg"
+          style="width: 700px; height: 350px; border: 1px solid #ddd; border-radius: 10px;"
+          alt="Combined Food Access Visualization"/>
       </div>
     </div>
   </div>
@@ -281,7 +286,6 @@
       <div class="visual-content">
         <div style="width: 100%;">
           <div style="width: 100%; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
-
             <div style="display: flex; align-items: center; gap: 10px;">
               <div style="background-color: var(--primary-color); color: white; padding: 10px; border-radius: 5px; width: 150px; text-align: center;">
                 Understanding Barriers
@@ -321,7 +325,6 @@
                 Alejandra & Noor
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -366,12 +369,10 @@
         </ul>
       </div>
       <div class="visual-content">
-          <img
-                          src="side_by_side.jpg"
-                          style="width: 700px; height: 500px; border: 1px solid #ddd; border-radius: 10px;"
-             />
-        </div>
-  
+        <img
+          src="C:\\Users\\jbclu\\OneDrive\\Documents\\Python_dev\\side_by_side.jpg"
+          style="width: 700px; height: 500px; border: 1px solid #ddd; border-radius: 10px;"
+          alt="Side by Side Barriers Visualization"/>
       </div>
     </div>
   </div>
@@ -414,7 +415,7 @@
         </ul>
       </div>
       <div class="visual-content">
-        <p>[IMAGE PLACEHOLDER: Images of poor quality produce and multiple shopping bags representing multiple store visits]</p>
+        <!-- <p>[IMAGE PLACEHOLDER: Images of poor quality produce and multiple shopping bags representing multiple store visits]</p> -->
       </div>
     </div>
   </div>
@@ -517,37 +518,31 @@
         <div class="chart-container">
           <h3 style="text-align: center; margin-bottom: 15px;">Produce Availability Comparison</h3>
           <div class="bar-chart">
-
             <div class="bar">
               <div class="bar-fill" style="height: 50%; background-color: #ff6b6b;"></div>
               <div class="bar-label">Limited<br>Produce<br>(Low-Income)</div>
               <div class="bar-label"><strong>50%</strong></div>
             </div>
-
             <div class="bar">
               <div class="bar-fill" style="height: 22.7%; background-color: #ff6b6b;"></div>
               <div class="bar-label">Limited<br>Produce<br>(High-Income)</div>
               <div class="bar-label"><strong>22.7%</strong></div>
             </div>
-
             <div class="bar">
               <div class="bar-fill" style="height: 4.2%; background-color: #4c956c;"></div>
               <div class="bar-label">Organic<br>Produce<br>(Low-Income)</div>
               <div class="bar-label"><strong>4.2%</strong></div>
             </div>
-
             <div class="bar">
               <div class="bar-fill" style="height: 18.2%; background-color: #4c956c;"></div>
               <div class="bar-label">Organic<br>Produce<br>(High-Income)</div>
               <div class="bar-label"><strong>18.2%</strong></div>
             </div>
-
             <div class="bar">
               <div class="bar-fill" style="height: 50%; background-color: #ffe66d;"></div>
               <div class="bar-label">Sanitation<br>Issues<br>(Low-Income)</div>
               <div class="bar-label"><strong>50%+</strong></div>
             </div>
-
           </div>
         </div>
       </div>
@@ -658,8 +653,11 @@
         </ul>
       </div>
       <div class="visual-content">
-        <p>[IMAGE PLACEHOLDER: Images of volunteer opportunities and logos of mentioned organizations]</p>
-      </div>
+        <img
+        src="C:\Users\jbclu\OneDrive\Documents\Python_dev\Local-Food-Banks-Distribution-Events.png"
+        style="width: 500px; height: 300px; border: 1px solid #ddd; border-radius: 10px;"
+        alt="Local Food Banks Distribution Events"/>
+            </div>
     </div>
   </div>
 
@@ -696,13 +694,61 @@
         <p><em>"The solution to food insecurity in Vallejo starts with each of us in this room. Which action will you take this week?"</em></p>
       </div>
       <div class="visual-content">
-        <p>[IMAGE PLACEHOLDER: Community garden, cooking class, and food distribution imagery]</p>
+        <img
+        src="C:/Users/jbclu/OneDrive/Documents/Python_dev/vallejo-garderns.png"
+        style="width: 400px; height: auto; border: 1px solid #ddd; border-radius: 10px;"
+        alt="Vallejo Garderns"
+      />
       </div>
     </div>
   </div>
 
   <!-- Slide 11: Thank You & Resources (Closing) -->
-  <div class="slide">
+   <!-- Slide 11: Thank You & Resources (Closing) -->
+<div class="slide">
+  <div class="slide-header">
+    <h2 class="slide-title">Join Us in Creating Change</h2>
+    <p class="slide-subtitle">Thank You</p>
+  </div>
+
+  <div style="text-align: center;">
+    <p><strong>Contact Information for Volunteer Opportunities:</strong></p>
+    <div style="margin: 20px 0; padding: 15px; background-color: var(--light-gray); border-radius: 8px; display: inline-block;">
+      <p><strong>Faith Fridays:</strong> 826 Solano Ave, Vallejo, CA 94590</p>
+      <p><strong>Food Bank of Contra Costa and Solano:</strong> www.foodbankccs.org</p>
+      <p><strong>Salvation Army Vallejo:</strong> (707) 643-8621</p>
+    </div>
+
+    <!-- Team Photo (or any image) Above -->
+    <div style="margin-bottom: 30px;">
+      <img
+        src="C:/Users/jbclu/OneDrive/Documents/Python_dev/PHE.jpg"
+        style="width: 400px; height: auto; border: 1px solid #ddd; border-radius: 10px;"
+        alt="Team Photo"
+      />
+      <p style="margin-top: 10px;">Presentation Team</p>
+    </div>
+
+    <!-- QR Code Below -->
+    <div style="margin-top: 20px;">
+      <div style="
+        width: 150px; 
+        height: 150px; 
+        background-color: var(--light-gray); 
+        margin: 0 auto; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 8px;
+      ">
+        <p>[QR CODE PLACEHOLDER]</p>
+      </div>
+      <p>Scan for Resources</p>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="slide">
     <div class="slide-header">
       <h2 class="slide-title">Join Us in Creating Change</h2>
       <p class="slide-subtitle">Thank You</p>
@@ -723,13 +769,18 @@
         </div>
         <div style="text-align: center;">
           <div style="width: 150px; height: 150px; background-color: var(--light-gray); margin: 0 auto; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
-            <p>[TEAM PHOTO PLACEHOLDER]</p>
-          </div>
+            <div class="visual-content">
+              <img
+              src="C:/Users/jbclu/OneDrive/Documents/Python_dev/PHE.jpg"
+              style="width: 500px; height: 300px; border: 1px solid #ddd; border-radius: 10px;"
+              alt="Local Food Banks Distribution Events"/>
+                  </div>
+                          </div>
           <p>Presentation Team</p>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <script>
     // Animate bars on page load for better visual effect
