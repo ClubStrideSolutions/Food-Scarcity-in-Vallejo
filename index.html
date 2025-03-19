@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Scarcity in Vallejo: A Comprehensive Analysis</title>
+  <style>
+    :root {
+      --primary-color: #2c6e49;
+      --secondary-color: #4c956c;
+      --accent-color: #fefee3;
+      --text-color: #333;
+      --light-gray: #f5f5f5;
+      --border-color: #ddd;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+
+    .slide {
+      margin-bottom: 50px;
+      padding: 30px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      page-break-after: always;
+    }
+
+    .slide-header {
+      border-bottom: 2px solid var(--primary-color);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    .slide-title {
+      color: var(--primary-color);
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .slide-subtitle {
+      color: var(--secondary-color);
+      margin: 5px 0 0;
+      font-size: 18px;
+    }
+
+    .slide-content {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .visual-content {
+      flex: 1;
+      background-color: var(--light-gray);
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 250px;
+    }
+
+    .pie-chart-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pie-chart {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .pie-segment {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(
+          #2c6e49 0% 12%, 
+          #4c956c 12% 58%, 
+          #ff6b6b 58% 87%, 
+          #ffe66d 87% 100%
+      );
+    }
+
+    .pie-segment-high {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(
+          #2c6e49 0% 36%, 
+          #4c956c 36% 77%, 
+          #ff6b6b 77% 86%, 
+          #ffe66d 86% 100%
+      );
+    }
+
+    .pie-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 15px;
+    }
+
+    .legend-color {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+    }
+
+    .bar-chart {
+      display: flex;
+      height: 200px;
+      align-items: flex-end;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .bar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bar-fill {
+      background-color: var(--secondary-color);
+      width: 40px;
+      transition: height 1s ease;
+    }
+
+    .bar-label {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .quote {
+      font-style: italic;
+      border-left: 3px solid var(--primary-color);
+      padding-left: 15px;
+      margin: 15px 0;
+    }
+
+    .presenter-note {
+      font-size: 14px;
+      color: #888;
+      border-top: 1px dashed #ccc;
+      margin-top: 20px;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .slide-content {
+        flex-direction: column;
+      }
+
+      .visual-content {
+        min-height: 200px;
+      }
+    }
+
+    @media print {
+      .slide {
+        page-break-after: always;
+        box-shadow: none;
+        border: none;
+      }
+
+      body {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Slide -->
+  <div class="slide">
+    <div style="text-align: center; padding: 40px 0;">
+      <h1 style="font-size: 36px; color: var(--primary-color);">Food Scarcity in Vallejo</h1>
+      <h2 style="font-size: 24px; color: var(--secondary-color); margin-top: 10px;">A Comprehensive Analysis</h2>
+      
+      <div style="margin: 40px 0;">
+        <div style="background-color: var(--light-gray); height: 250px; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+          <p>[IMAGE PLACEHOLDER: Vallejo community or food access visual]</p>
+        </div>
+      </div>
+      
+      <p style="font-size: 18px; margin-top: 30px;">
+        "Let's commit today to building a more food-secure Vallejo for all residents."
+      </p>
+      <p style="font-size: 18px;">
+        Presented by: Ariam, Ricardo, Joselito, Jacqueline, Alejandra, and Noor
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 1: Introduction (Ariam) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Food Scarcity in Vallejo: A Critical Issue</h2>
+      <p class="slide-subtitle">Presenter: Ariam</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>Food scarcity affects health, equity, and community well-being</strong></li>
+          <li><strong>Vallejo faces unique challenges:</strong>
+            <ul>
+              <li>High cost of living</li>
+              <li>Limited full-service groceries</li>
+              <li>Transportation barriers</li>
+            </ul>
+          </li>
+          <li><strong>Disproportionately impacts low-income neighborhoods</strong></li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <img
+                        src="C:\Users\jbclu\OneDrive\Documents\Python_dev\combined_image.jpg"
+                        style="width: 700px; height: 350px; border: 1px solid #ddd; border-radius: 10px;"
+           />
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Presentation Roadmap (Ariam) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Our Approach</h2>
+      <p class="slide-subtitle">Presenter: Ariam</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>Barriers Analysis (Ricardo):</strong> Six major obstacles to food access</li>
+          <li><strong>Data Specialist (Joselito):</strong> Statistics and evidence</li>
+          <li><strong>Personal Story Sharer (Jacqueline):</strong> Real-life perspective</li>
+          <li><strong>Call-to-Action (Alejandra & Noor):</strong> Solutions and next steps</li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <div style="width: 100%;">
+          <div style="width: 100%; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="background-color: var(--primary-color); color: white; padding: 10px; border-radius: 5px; width: 150px; text-align: center;">
+                Understanding Barriers
+              </div>
+              <div style="border-top: 2px dashed var(--primary-color); flex-grow: 1;"></div>
+              <div style="background-color: var(--primary-color); color: white; padding: 10px; border-radius: 5px; width: 100px; text-align: center;">
+                Ricardo
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="background-color: var(--secondary-color); color: white; padding: 10px; border-radius: 5px; width: 150px; text-align: center;">
+                Data Analysis
+              </div>
+              <div style="border-top: 2px dashed var(--secondary-color); flex-grow: 1;"></div>
+              <div style="background-color: var(--secondary-color); color: white; padding: 10px; border-radius: 5px; width: 100px; text-align: center;">
+                Joselito
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="background-color: #ff6b6b; color: white; padding: 10px; border-radius: 5px; width: 150px; text-align: center;">
+                Community Perspective
+              </div>
+              <div style="border-top: 2px dashed #ff6b6b; flex-grow: 1;"></div>
+              <div style="background-color: #ff6b6b; color: white; padding: 10px; border-radius: 5px; width: 100px; text-align: center;">
+                Jacqueline
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="background-color: #ffe66d; color: var(--text-color); padding: 10px; border-radius: 5px; width: 150px; text-align: center;">
+                Solutions
+              </div>
+              <div style="border-top: 2px dashed #ffe66d; flex-grow: 1;"></div>
+              <div style="background-color: #ffe66d; color: var(--text-color); padding: 10px; border-radius: 5px; width: 100px; text-align: center;">
+                Alejandra & Noor
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Major Barriers Part 1 (Ricardo) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Barriers to Food Access in Vallejo</h2>
+      <p class="slide-subtitle">Presenter: Ricardo</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>1. Store Location & Transportation</strong>
+            <ul>
+              <li>Stores too far from residences</li>
+              <li>Inadequate public transportation</li>
+              <li>Limited carrying capacity</li>
+            </ul>
+            <div class="quote">
+              "I personally think they're [stores] too far to walk, especially."
+            </div>
+          </li>
+          <li><strong>2. Affordability</strong>
+            <ul>
+              <li>High Bay Area living costs</li>
+              <li>Premium prices at local markets</li>
+              <li>Higher costs for healthier options</li>
+            </ul>
+            <div class="quote">
+              "Oftentimes we don't buy specific (healthy) foods because of its cost."
+            </div>
+          </li>
+          <li><strong>3. Lack of Full-Service Grocery Stores</strong>
+            <ul>
+              <li>Few options in low-income areas</li>
+              <li>Reliance on convenience stores</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="visual-content">
+          <img
+                          src="C:\Users\jbclu\OneDrive\Documents\Python_dev\side_by_side.jpg"
+                          style="width: 700px; height: 500px; border: 1px solid #ddd; border-radius: 10px;"
+             />
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: Major Barriers Part 2 (Ricardo) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Additional Challenges</h2>
+      <p class="slide-subtitle">Presenter: Ricardo</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>4. Meal Adaptation</strong>
+            <ul>
+              <li>Changing planned meals due to missing ingredients</li>
+              <li>Multiple store visits required</li>
+              <li>Recipe abandonment</li>
+            </ul>
+            <div class="quote">
+              "If I have to cook a meal, and then, man, I have to go to Food Max for this and then the Filipino place for that, do I give up that meal? Sometimes I do; it's not worth it for me to do all that."
+            </div>
+          </li>
+          <li><strong>5. Poor Food Quality</strong>
+            <ul>
+              <li>Rotten/spoiled produce</li>
+              <li>Expired products</li>
+              <li>Sanitation concerns</li>
+            </ul>
+            <div class="quote">
+              "The thing is, though, you have to eat it (the food) right away, the 99 cent store, you cannot store it (the food); it will go bad."
+            </div>
+          </li>
+          <li><strong>6. Donated Foods Issues</strong>
+            <ul>
+              <li>Quality concerns in food assistance programs</li>
+              <li>Expired or substandard items</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <p>[IMAGE PLACEHOLDER: Images of poor quality produce and multiple shopping bags representing multiple store visits]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Food Retail Statistics (Joselito) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Food Retail by Neighborhood Type</h2>
+      <p class="slide-subtitle">Presenter: Joselito</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>Low-Income Areas:</strong>
+            <ul>
+              <li>Grocery Stores: 12%</li>
+              <li>Convenience Stores: 46%</li>
+              <li>Liquor Stores: 29%</li>
+              <li>Specialty Stores: 13%</li>
+            </ul>
+            <p><strong>Total: 48 stores</strong></p>
+          </li>
+          <li><strong>High-Income Areas:</strong>
+            <ul>
+              <li>Grocery Stores: 36%</li>
+              <li>Convenience Stores: 41%</li>
+              <li>Liquor Stores: 9%</li>
+              <li>Specialty Stores: 14%</li>
+            </ul>
+            <p><strong>Total: 22 stores</strong></p>
+          </li>
+          <li><strong>Key Finding:</strong> 88% of all liquor stores and 71% of all convenience stores in Vallejo are located in low-income neighborhoods.</li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <div class="pie-chart-container">
+          <h3 style="text-align: center; margin: 0 0 10px 0;">Store Distribution</h3>
+          <div class="pie-chart">
+            <div style="text-align: center;">
+              <div class="pie-segment"></div>
+              <p style="margin-top: 10px;">Low-Income</p>
+            </div>
+            <div style="text-align: center;">
+              <div class="pie-segment-high"></div>
+              <p style="margin-top: 10px;">High-Income</p>
+            </div>
+          </div>
+          <div class="pie-legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #2c6e49;"></div>
+              <span>Grocery</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #4c956c;"></div>
+              <span>Convenience</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #ff6b6b;"></div>
+              <span>Liquor</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #ffe66d;"></div>
+              <span>Specialty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Produce Availability and Quality (Joselito) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">The Nutrition Gap</h2>
+      <p class="slide-subtitle">Presenter: Joselito</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>Limited Produce Selection:</strong>
+            <ul>
+              <li>50% of stores in low-income areas have fewer than 10 types of produce</li>
+              <li>Only 22.7% of stores in high-income areas have this limitation</li>
+            </ul>
+          </li>
+          <li><strong>Organic Produce Availability:</strong>
+            <ul>
+              <li>Fresh organic produce in low-income areas: 4.2%</li>
+              <li>Fresh organic produce in high-income areas: 18.2%</li>
+            </ul>
+          </li>
+          <li><strong>Cleanliness Concerns:</strong>
+            <ul>
+              <li>Over 50% of stores in low-income areas lack "clean and sanitary environment" for produce</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <div class="chart-container">
+          <h3 style="text-align: center; margin-bottom: 15px;">Produce Availability Comparison</h3>
+          <div class="bar-chart">
+
+            <div class="bar">
+              <div class="bar-fill" style="height: 50%; background-color: #ff6b6b;"></div>
+              <div class="bar-label">Limited<br>Produce<br>(Low-Income)</div>
+              <div class="bar-label"><strong>50%</strong></div>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill" style="height: 22.7%; background-color: #ff6b6b;"></div>
+              <div class="bar-label">Limited<br>Produce<br>(High-Income)</div>
+              <div class="bar-label"><strong>22.7%</strong></div>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill" style="height: 4.2%; background-color: #4c956c;"></div>
+              <div class="bar-label">Organic<br>Produce<br>(Low-Income)</div>
+              <div class="bar-label"><strong>4.2%</strong></div>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill" style="height: 18.2%; background-color: #4c956c;"></div>
+              <div class="bar-label">Organic<br>Produce<br>(High-Income)</div>
+              <div class="bar-label"><strong>18.2%</strong></div>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill" style="height: 50%; background-color: #ffe66d;"></div>
+              <div class="bar-label">Sanitation<br>Issues<br>(Low-Income)</div>
+              <div class="bar-label"><strong>50%+</strong></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Community Experience (Jacqueline) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Beyond Statistics: A Community Story</h2>
+      <p class="slide-subtitle">Presenter: Jacqueline</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <p><strong>Community Story Outline:</strong></p>
+        <ul>
+          <li><strong>Transportation challenges</strong>
+            <div class="quote">
+              "Riding the bus, I can only have one batch as I have a purse. Usually the bus doesn't stop right in front of you, kind of down a block. So, there's a walking distance you have to walk through like 2–3 streets away."
+            </div>
+          </li>
+          <li><strong>Limited shopping options</strong>
+            <div class="quote">
+              "Both (smaller, local stores) have mainly everything but like I said less quality for a higher price."
+            </div>
+          </li>
+          <li><strong>Food quality concerns</strong>
+            <div class="quote">
+              "Disappointed, if I'm wanting to make something or do something and I can't make it then I'm disappointed."
+            </div>
+          </li>
+          <li><strong>Emotional impact</strong> of these daily challenges</li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <p>[IMAGE PLACEHOLDER: Visual representing transportation challenges to grocery access]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 8: Human Impact (Jacqueline) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">The Real-Life Consequences</h2>
+      <p class="slide-subtitle">Presenter: Jacqueline</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <p><strong>Effects of Food Scarcity:</strong></p>
+        <ul>
+          <li><strong>Day-to-day life impacts:</strong>
+            <ul>
+              <li>Multiple trips to different stores</li>
+              <li>Limited food choices</li>
+              <li>Time burden of food acquisition</li>
+            </ul>
+          </li>
+          <li><strong>Mental well-being:</strong>
+            <ul>
+              <li>Stress over meal planning</li>
+              <li>Frustration with options</li>
+              <li>Worry about nutrition</li>
+            </ul>
+          </li>
+          <li><strong>Family meal planning:</strong>
+            <ul>
+              <li>Improvising with available ingredients</li>
+              <li>Abandoning cultural recipes</li>
+              <li>Compromising on nutrition</li>
+            </ul>
+          </li>
+        </ul>
+        <p><em>"Behind every statistic is a person trying to provide healthy food for themselves and their families."</em></p>
+      </div>
+      <div class="visual-content">
+        <p>[IMAGE PLACEHOLDER: Images showing family meal adaptation, limited dinner options, or person planning meals]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 9: Individual Actions (Alejandra & Noor) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">What You Can Do</h2>
+      <p class="slide-subtitle">Presenters: Alejandra & Noor</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>Volunteer at food distribution centers:</strong>
+            <ul>
+              <li>Faith Fridays at 826 Solano Ave, Vallejo, CA 94590</li>
+              <li>Help with sorting, packaging, and distribution</li>
+            </ul>
+          </li>
+          <li><strong>Support Food Bank operations:</strong>
+            <ul>
+              <li>Food Bank of Contra Costa and Solano</li>
+              <li>Participate in food sorting and distribution efforts</li>
+            </ul>
+          </li>
+          <li><strong>Assist local food pantries:</strong>
+            <ul>
+              <li>Salvation Army in Vallejo</li>
+              <li>Donate quality food items to households experiencing food insecurity</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="visual-content">
+        <p>[IMAGE PLACEHOLDER: Images of volunteer opportunities and logos of mentioned organizations]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 10: Community Solutions (Alejandra & Noor) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Building a Healthier Vallejo Together</h2>
+      <p class="slide-subtitle">Presenters: Alejandra & Noor</p>
+    </div>
+    <div class="slide-content">
+      <div class="text-content">
+        <ul>
+          <li><strong>Food rescue initiatives:</strong>
+            <ul>
+              <li>Reduce food waste by redistributing excess food to those in need</li>
+              <li>Create connections between food businesses and distribution centers</li>
+            </ul>
+          </li>
+          <li><strong>Education and awareness:</strong>
+            <ul>
+              <li>Nutrition workshops</li>
+              <li>Cooking classes using affordable ingredients</li>
+              <li>Sustainable food practices training</li>
+            </ul>
+          </li>
+          <li><strong>Community advocacy:</strong>
+            <ul>
+              <li>Support policies that increase healthy food access</li>
+              <li>Advocate for transportation improvements to food sources</li>
+              <li>Push for better quality standards in food assistance programs</li>
+            </ul>
+          </li>
+        </ul>
+        <p><em>"The solution to food insecurity in Vallejo starts with each of us in this room. Which action will you take this week?"</em></p>
+      </div>
+      <div class="visual-content">
+        <p>[IMAGE PLACEHOLDER: Community garden, cooking class, and food distribution imagery]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 11: Thank You & Resources (Closing) -->
+  <div class="slide">
+    <div class="slide-header">
+      <h2 class="slide-title">Join Us in Creating Change</h2>
+      <p class="slide-subtitle">Thank You</p>
+    </div>
+    <div style="text-align: center;">
+      <p><strong>Contact Information for Volunteer Opportunities:</strong></p>
+      <div style="margin: 20px 0; padding: 15px; background-color: var(--light-gray); border-radius: 8px; display: inline-block;">
+        <p><strong>Faith Fridays:</strong> 826 Solano Ave, Vallejo, CA 94590</p>
+        <p><strong>Food Bank of Contra Costa and Solano:</strong> www.foodbankccs.org</p>
+        <p><strong>Salvation Army Vallejo:</strong> (707) 643-8621</p>
+      </div>
+      <div style="margin: 30px 0; display: flex; justify-content: center; gap: 50px;">
+        <div style="text-align: center;">
+          <div style="width: 150px; height: 150px; background-color: var(--light-gray); margin: 0 auto; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+            <p>[QR CODE PLACEHOLDER]</p>
+          </div>
+          <p>Scan for Resources</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 150px; height: 150px; background-color: var(--light-gray); margin: 0 auto; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+            <p>[TEAM PHOTO PLACEHOLDER]</p>
+          </div>
+          <p>Presentation Team</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animate bars on page load for better visual effect
+    window.addEventListener('load', function() {
+      const bars = document.querySelectorAll('.bar-fill');
+      bars.forEach(bar => {
+        const originalHeight = bar.style.height;
+        // reset to 0 first
+        bar.style.height = '0';
+        // animate to the original height
+        setTimeout(() => {
+          bar.style.height = originalHeight;
+        }, 300);
+      });
+    });
+  </script>
+
+</body>
+</html>
