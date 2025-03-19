@@ -59,10 +59,9 @@
 
     .text-content {
       flex: 1;
-      /* Let text shrink or grow as needed. */
-      min-width: 0;
     }
 
+    /* Minimally ensure images don’t overflow */
     .visual-content {
       flex: 1;
       padding: 15px;
@@ -70,19 +69,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      /* Ensure images scale gracefully. */
+      min-height: 250px;
       overflow: hidden;
     }
-
-    /* Ensures images never overflow their container; 
-       also sets a max-width while preserving aspect ratio. */
     .visual-content img {
-      display: block;
       max-width: 100%;
       height: auto;
       border: 1px solid var(--border-color);
       border-radius: 10px;
-      object-fit: cover;
     }
 
     ul {
@@ -110,30 +104,31 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
-      overflow: hidden; /* prevents overflow if resized */
     }
 
-    .pie-segment,
+    .pie-segment {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(
+          #2c6e49 0% 12%, 
+          #4c956c 12% 58%, 
+          #ff6b6b 58% 87%, 
+          #ffe66d 87% 100%
+      );
+    }
+
     .pie-segment-high {
       position: relative;
       width: 150px;
       height: 150px;
       border-radius: 50%;
-    }
-    .pie-segment {
       background: conic-gradient(
-        #2c6e49 0% 12%, 
-        #4c956c 12% 58%, 
-        #ff6b6b 58% 87%, 
-        #ffe66d 87% 100%
-      );
-    }
-    .pie-segment-high {
-      background: conic-gradient(
-        #2c6e49 0% 36%, 
-        #4c956c 36% 77%, 
-        #ff6b6b 77% 86%, 
-        #ffe66d 86% 100%
+          #2c6e49 0% 36%, 
+          #4c956c 36% 77%, 
+          #ff6b6b 77% 86%, 
+          #ffe66d 86% 100%
       );
     }
 
@@ -163,7 +158,6 @@
       align-items: flex-end;
       gap: 20px;
       padding: 10px;
-      overflow-x: auto;
     }
 
     .bar {
@@ -172,7 +166,6 @@
       flex-direction: column;
       align-items: center;
       gap: 5px;
-      min-width: 80px; /* ensures bars have some width on narrow screens */
     }
 
     .bar-fill {
@@ -185,7 +178,6 @@
       font-size: 12px;
       text-align: center;
       margin-top: 5px;
-      white-space: nowrap;
     }
 
     .quote {
@@ -208,8 +200,8 @@
         flex-direction: column;
       }
       .visual-content {
-        margin-top: 15px;
-        min-height: 180px;
+        min-height: 200px;
+        margin-top: 20px;
       }
     }
 
@@ -239,15 +231,14 @@
       
       <div style="margin: 20px 0;">
         <div style="
+          height: 250px; 
           display: flex; 
           justify-content: center; 
           align-items: center; 
-          border-radius: 8px;
-          max-width: 600px;
-          margin: 0 auto;
-        ">
+          border-radius: 8px;">
           <img
             src="vallejo-view.png"
+            style="width: 500px; height: 300px;"
             alt="Local Food Banks Distribution Events"
           />
         </div>
@@ -285,6 +276,7 @@
       <div class="visual-content">
         <img
           src="combined_image.jpg"
+          style="width: 700px; height: 350px;"
           alt="Combined Food Access Visualization"
         />
       </div>
@@ -307,9 +299,97 @@
         </ul>
       </div>
       <div class="visual-content">
-        <div style="max-width: 100%; text-align:center;">
-          <!-- You can place an infographic or flowchart here. -->
-          [FLOWCHART or TIMELINE Placeholder]
+        <div style="width: 100%;">
+          <div style="width: 100%; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="
+                background-color: var(--primary-color);
+                color: white; 
+                padding: 10px;
+                border-radius: 5px;
+                width: 150px;
+                text-align: center;">
+                Understanding Barriers
+              </div>
+              <div style="border-top: 2px dashed var(--primary-color); flex-grow: 1;"></div>
+              <div style="
+                background-color: var(--primary-color);
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                width: 100px;
+                text-align: center;">
+                Ricardo
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="
+                background-color: var(--secondary-color);
+                color: white;
+                padding: 10px; 
+                border-radius: 5px; 
+                width: 150px; 
+                text-align: center;">
+                Data Analysis
+              </div>
+              <div style="border-top: 2px dashed var(--secondary-color); flex-grow: 1;"></div>
+              <div style="
+                background-color: var(--secondary-color);
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                width: 100px;
+                text-align: center;">
+                Joselito
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="
+                background-color: #ff6b6b;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                width: 150px;
+                text-align: center;">
+                Community Perspective
+              </div>
+              <div style="border-top: 2px dashed #ff6b6b; flex-grow: 1;"></div>
+              <div style="
+                background-color: #ff6b6b;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                width: 100px;
+                text-align: center;">
+                Jacqueline
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="
+                background-color: #ffe66d;
+                color: var(--text-color);
+                padding: 10px;
+                border-radius: 5px;
+                width: 150px;
+                text-align: center;">
+                Solutions
+              </div>
+              <div style="border-top: 2px dashed #ffe66d; flex-grow: 1;"></div>
+              <div style="
+                background-color: #ffe66d;
+                color: var(--text-color);
+                padding: 10px;
+                border-radius: 5px;
+                width: 100px;
+                text-align: center;">
+                Alejandra & Noor
+              </div>
+            </div>
+          </div>
+          <!-- [FLOWCHART or TIMELINE Placeholder] -->
         </div>
       </div>
     </div>
@@ -355,6 +435,7 @@
       <div class="visual-content">
         <img
           src="side_by_side.jpg"
+          style="width: 700px; height: 500px;"
           alt="Side by Side Barriers Visualization"
         />
       </div>
@@ -399,7 +480,7 @@
         </ul>
       </div>
       <div class="visual-content">
-        [IMAGE PLACEHOLDER: e.g., poor produce or multiple store visits]
+        <!-- <p>[IMAGE PLACEHOLDER: Images of poor quality produce and multiple shopping bags representing multiple store visits]</p> -->
       </div>
     </div>
   </div>
@@ -431,10 +512,7 @@
             </ul>
             <p><strong>Total: 22 stores</strong></p>
           </li>
-          <li>
-            <strong>Key Finding:</strong>
-            88% of all liquor stores and 71% of all convenience stores in Vallejo are located in low-income neighborhoods.
-          </li>
+          <li><strong>Key Finding:</strong> 88% of all liquor stores and 71% of all convenience stores in Vallejo are located in low-income neighborhoods.</li>
         </ul>
       </div>
       <div class="visual-content">
@@ -564,19 +642,18 @@
           <li><strong>Emotional impact</strong> of these daily challenges</li>
         </ul>
 
+        <!-- Additional Insight from the user code about March 19, 2025 article... -->
         <p style="margin-top: 20px;">
           <strong>Additional Insight (March 19, 2025):</strong> According to a recent Vallejo Sun report,
           <em>SolTrans</em> is <strong>eliminating five bus routes</strong> to increase frequency on
-          other lines. Although the changes aim for better midday service, some residents in neighborhoods
-          like Country Club Crest now face longer than 10-minute walk times. Families with children
-          or wheelchairs may find it even harder to reach grocery stores or return with
-          purchases—deepening the “Missed vs. Absent” pattern in our data. 
+          other lines...
         </p>
       </div>
       <div class="visual-content">
         <img
           src="Solano_Bus_Map.png"
-          alt="Map from SolTrans presentation showing areas with potential longer wait times"
+          style="width: 700px; height: 500px;"
+          alt="A map from SolTrans presentation with potential longer wait times"
         />
       </div>
     </div>
@@ -617,8 +694,9 @@
         <p><em>"Behind every statistic is a person trying to provide healthy food for themselves and their families."</em></p>
       </div>
       <div class="visual-content">
-        <!-- Provide your chosen image(s) here -->
-        [IMAGE PLACEHOLDER: e.g., family meal adaptation, limited dinner, or meal planning]
+        <p>
+          [IMAGE PLACEHOLDER: e.g., family meal adaptation, limited dinner options, or meal planning]
+        </p>
       </div>
     </div>
   </div>
@@ -655,6 +733,7 @@
       <div class="visual-content">
         <img
           src="Local-Food-Banks-Distribution-Events.png"
+          style="width: 500px; height: 300px;"
           alt="Local Food Banks Distribution Events"
         />
       </div>
@@ -696,8 +775,8 @@
       <div class="visual-content">
         <img
           src="vallejo-garderns.png"
-          alt="Vallejo Gardens"
-          style="max-width: 400px;"
+          style="width: 400px; height: auto;"
+          alt="Vallejo Garderns"
         />
       </div>
     </div>
@@ -715,28 +794,30 @@
       <div style="
         margin: 20px 0; 
         padding: 15px; 
-        background-color: var(--light-gray); 
+        background-color: var(--light-gray);
         border-radius: 8px; 
-        display: inline-block;
-      ">
+        display: inline-block;">
         <p><strong>Faith Fridays:</strong> 826 Solano Ave, Vallejo, CA 94590</p>
         <p><strong>Food Bank of Contra Costa and Solano:</strong> www.foodbankccs.org</p>
         <p><strong>Salvation Army Vallejo:</strong> (707) 643-8621</p>
       </div>
 
+      <!-- Team Photo (or any image) Above -->
       <div style="margin-bottom: 30px;">
         <img
           src="PHE.jpg"
           alt="Team Photo"
+          style="max-width: 400px; height: auto;"
         />
         <p style="margin-top: 10px;">Presentation Team</p>
       </div>
 
+      <!-- QR Code Below -->
       <div style="margin-top: 20px;">
         <div style="
           width: 150px; 
-          height: 150px; 
-          background-color: var(--light-gray); 
+          height: 150px;
+          background-color: var(--light-gray);
           margin: 0 auto; 
           display: flex; 
           justify-content: center; 
